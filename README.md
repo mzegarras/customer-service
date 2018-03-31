@@ -69,3 +69,9 @@ docker push mzegarra/clientesa:6.0.0
 curl -v -H "Content-Type: application/json" -X POST -d '{"Codigo":"Zegarra","Nombres":"Manuel"}'  http://realelb-1395575868.us-east-1.elb.amazonaws.com/api/clientes
 ```
 
+### Agregar Health Check library
+https://www.app-metrics.io/samples/health-code/
+
+```
+dotnet add package App.Metrics.AspNetCore.Health.Endpoints --version 2.0.0
+```

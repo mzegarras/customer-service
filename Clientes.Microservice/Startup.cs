@@ -37,7 +37,7 @@ namespace Clientes.Microservice
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseHealthAllEndpoints();
             app.UseMvc();
         }
     }
