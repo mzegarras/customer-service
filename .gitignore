@@ -11,6 +11,8 @@ Notas.txt
 ./Clientes.Microservice/bin/
 ./Clientes.Microservice/obj/
 
+./Clientes.Dao/bin/
+./Clientes.Dao/obj/
 
 
 

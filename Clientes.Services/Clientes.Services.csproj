@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Clientes.Model\Clientes.Model.csproj" />
+    <ProjectReference Include="..\Clientes.Dao\Clientes.Dao.csproj" />
   </ItemGroup>
 
 </Project>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Amazon.SimpleNotificationService;
+using Clientes.Dao;
 using Clientes.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -25,6 +26,8 @@ namespace Clientes.Microservice
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddScoped<ClienteRespository, ClienteRespositoryImpl>();
             services.AddScoped<ClienteService, ClienteServiceImpl>();
             services.AddScoped<NotificationService, NotificationServiceImpl>();
             services.AddScoped<IAmazonSimpleNotificationService, AmazonSimpleNotificationServiceClient>();

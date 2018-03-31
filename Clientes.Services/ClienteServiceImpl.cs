@@ -1,6 +1,7 @@
 ﻿using System;
 using Amazon.SimpleNotificationService;
 using Amazon.SimpleNotificationService.Model;
+using Clientes.Dao;
 using Clientes.Model;
 using Microsoft.Extensions.Logging;
 
@@ -13,14 +14,21 @@ namespace Clientes.Services
         private readonly ILogger<ClienteServiceImpl> log;
         private readonly NotificationService notificationService;
 
+        private readonly ClienteRespository clienteRespository;
+
         public ClienteServiceImpl(ILogger<ClienteServiceImpl> log,
-                                NotificationService notificationService){
+                                NotificationService notificationService,
+                                ClienteRespository clienteRespository){
             this.notificationService=notificationService;
             this.log=log;
+            this.clienteRespository = clienteRespository;
         }
 
         public void save(Customer customer)
         {
+            
+            this.clienteRespository.connect();
+            
             notificationService.sendMessage();
         }
 

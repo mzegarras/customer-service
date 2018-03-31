@@ -51,17 +51,17 @@ dotnet add ./Clientes.Microservice/Clientes.Microservice.csproj reference ./Clie
 
 ### Generar imagen
 ```
-docker build -t clientesa:12.0.0 .
+docker build -t clientesa:13.0.0 .
 ```
 
 ### Tag imagen
 ```
-docker tag clientesa:12.0.0 mzegarra/clientesa:12.0.0
+docker tag clientesa:13.0.0 mzegarra/clientesa:13.0.0
 ```
 
 ### Publicar imagen
 ```
-docker push mzegarra/clientesa:12.0.0
+docker push mzegarra/clientesa:13.0.0
 ```
 
 ### Invcar método save
@@ -87,4 +87,15 @@ https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging/?tabs=aspnetco
 
 ```
 curl -v -H "Content-Type: application/json" -X GET http://realelb-1395575868.us-east-1.elb.amazonaws.com/api/clientes
+```
+
+### Agregar Mysql
+```
+dotnet add package MySqlConnector --version 0.38.0
+```
+
+### Agregar referencia
+
+```
+dotnet add ./Clientes.Services/Clientes.Services.csproj reference ./Clientes.Dao/Clientes.Dao.csproj
 ```
