@@ -42,6 +42,19 @@ namespace Clientes.Services
             log.LogDebug(publishResponse.MessageId);
             log.LogDebug(publishResponse.ResponseMetadata.ToString());
             log.LogDebug(publishResponse.ToString());
+
+             log.LogInformation(publishResponse.MessageId);
+            log.LogInformation(publishResponse.ResponseMetadata.ToString());
+            log.LogInformation(publishResponse.ToString());
+
+             log.LogTrace(publishResponse.MessageId);
+            log.LogTrace(publishResponse.ResponseMetadata.ToString());
+            log.LogTrace(publishResponse.ToString());
+
+            log.LogWarning(publishResponse.MessageId);
+            log.LogWarning(publishResponse.ResponseMetadata.ToString());
+            log.LogWarning(publishResponse.ToString());
+
         }
     } 
 }
