@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Amazon.SimpleNotificationService;
 using Clientes.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -25,17 +26,32 @@ namespace Clientes.Microservice
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<ClienteService, ClienteServiceImpl>();
+            services.AddScoped<NotificationService, NotificationServiceImpl>();
+            services.AddScoped<IAmazonSimpleNotificationService, AmazonSimpleNotificationServiceClient>();
+            
+            
             //services.AddLogging(configure => configure.AddConsole());
+            //services.AddLogging(configure => configure.AddDebug());
             //services.AddSingleton<ClienteService,ClienteServiceImpl>();
 
 
             var serviceProvider = new ServiceCollection()
-                      .AddLogging() //<-- You were missing this
+                      .AddLogging(configure => configure.AddConsole())
                       .BuildServiceProvider();
 
+             //configure console logging
+            serviceProvider
+                    .GetService<ILoggerFactory>()
+                    .AddConsole(LogLevel.Debug);
+
+            var logger = serviceProvider.GetService<ILoggerFactory>()
+                        .CreateLogger<Program>();
             
+            logger.LogInformation("Starting application");
 
             services.AddMvc();
+
+            logger.LogInformation("All done!");
         }
 
 

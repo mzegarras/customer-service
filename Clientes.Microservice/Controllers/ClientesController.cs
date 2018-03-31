@@ -16,9 +16,11 @@ namespace Clientes.Microservice.Controllers
         private readonly ILogger<ClientesController> log;
         private readonly ClienteService clienteService;
 
-        public ClientesController(ClienteService clienteService,ILogger<ClientesController> log){
+        public ClientesController(ClienteService clienteService,ILogger<ClientesController> logger){
             this.clienteService=clienteService;
-            this.log=log;
+            this.log= logger;
+
+
         }
 
         // GET api/values
@@ -43,12 +45,13 @@ namespace Clientes.Microservice.Controllers
             clienteTO2.Edad=clienteService.sumar(1,9);
             clientes.Add(clienteTO2);
 
-
-            log.LogInformation("Hello");
-            log.LogDebug("Hello");
-            log.LogError("Hello");
-            log.LogTrace("Hello");
-            log.LogWarning("Hello");
+            log.LogTrace("LogTrace");
+            log.LogDebug("LogDebug");
+            log.LogInformation("LogInformation");
+            log.LogWarning("LogWarning");
+            log.LogError("LogError");
+            log.LogCritical("LogCritical");
+            
 
             return clientes;
         }
