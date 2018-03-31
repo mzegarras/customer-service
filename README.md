@@ -78,6 +78,8 @@ dotnet add package App.Metrics.AspNetCore.Health.Endpoints --version 2.0.0
 
 
 ### Agregar Logging
+https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging/?tabs=aspnetcore2x
+
 ```
   dotnet add package Microsoft.Extensions.DependencyInjection
   dotnet add package Microsoft.Extensions.Logging
