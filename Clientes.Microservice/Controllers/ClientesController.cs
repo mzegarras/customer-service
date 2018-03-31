@@ -11,7 +11,7 @@ namespace Clientes.Microservice.Controllers
     [Route("api/[controller]")]
     public class ClientesController : Controller
     {
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(typeof(ClientesController));
+        //private static readonly log4net.ILog log = log4net.LogManager.GetLogger(typeof(ClientesController));
         private readonly ClienteService clienteService;
         
         public ClientesController(ClienteService clienteService){
@@ -40,10 +40,10 @@ namespace Clientes.Microservice.Controllers
             clienteTO2.Edad=clienteService.sumar(1,9);
             clientes.Add(clienteTO2);
 
-            log.Debug("1");
+            /*log.Debug("1");
             log.Error("2");
             log.Fatal("3");
-            log.Warn("4");
+            log.Warn("4");*/
             return clientes;
         }
 
@@ -74,6 +74,8 @@ namespace Clientes.Microservice.Controllers
 
             Console.Write(cliente.Codigo);
             Console.Write(cliente.Nombres);
+
+            clienteService.save(null);
 
             return CreatedAtRoute("GetCliente", new { id = cliente.Codigo }, cliente);
 

@@ -17,6 +17,8 @@ dotnet new classlib -o MyWebApp.DataStore
 ### Agregar dependencias
 ```
 dotnet add package log4net --version 2.0.8
+dotnet add package AWSSDK.SimpleNotificationService --version 3.3.0.27
+
 ```
 
 ### Compilar
@@ -45,4 +47,19 @@ dotnet new classlib -o MyWebApp.DataStore
 
 ```
 dotnet add ./Clientes.Microservice/Clientes.Microservice.csproj reference ./Clientes.Services/Clientes.Services.csproj
+```
+
+### Generar imagen
+```
+docker build -t clientesa:6.0.0 .
+```
+
+### Tag imagen
+```
+docker tag clientesa:6.0.0 mzegarra/clientesa:6.0.0
+```
+
+### Publicar imagen
+```
+docker push mzegarra/clientesa:6.0.0
 ```

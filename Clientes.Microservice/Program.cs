@@ -7,7 +7,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using log4net.Config;
+//using log4net.Config;
 using System.Reflection;
 
 namespace Clientes.Microservice
@@ -17,8 +17,8 @@ namespace Clientes.Microservice
         public static void Main(string[] args)
         {
 
-            var logRepository = log4net.LogManager.GetRepository(Assembly.GetEntryAssembly());
-            XmlConfigurator.Configure(logRepository, new FileInfo("log4net.config"));
+            //var logRepository = log4net.LogManager.GetRepository(Assembly.GetEntryAssembly());
+            //XmlConfigurator.Configure(logRepository, new FileInfo("log4net.config"));
 
             BuildWebHost(args).Run();
             
