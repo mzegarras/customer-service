@@ -51,17 +51,17 @@ dotnet add ./Clientes.Microservice/Clientes.Microservice.csproj reference ./Clie
 
 ### Generar imagen
 ```
-docker build -t clientesa:11.0.0 .
+docker build -t clientesa:12.0.0 .
 ```
 
 ### Tag imagen
 ```
-docker tag clientesa:11.0.0 mzegarra/clientesa:11.0.0
+docker tag clientesa:12.0.0 mzegarra/clientesa:12.0.0
 ```
 
 ### Publicar imagen
 ```
-docker push mzegarra/clientesa:11.0.0
+docker push mzegarra/clientesa:12.0.0
 ```
 
 ### Invcar método save
