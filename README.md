@@ -51,17 +51,17 @@ dotnet add ./Clientes.Microservice/Clientes.Microservice.csproj reference ./Clie
 
 ### Generar imagen
 ```
-docker build -t clientesa:13.0.0 .
+docker build -t clientesa:14.0.0 .
 ```
 
 ### Tag imagen
 ```
-docker tag clientesa:13.0.0 mzegarra/clientesa:13.0.0
+docker tag clientesa:14.0.0 mzegarra/clientesa:14.0.0
 ```
 
 ### Publicar imagen
 ```
-docker push mzegarra/clientesa:13.0.0
+docker push mzegarra/clientesa:14.0.0
 ```
 
 ### Invcar método save
@@ -98,4 +98,38 @@ dotnet add package MySqlConnector --version 0.38.0
 
 ```
 dotnet add ./Clientes.Services/Clientes.Services.csproj reference ./Clientes.Dao/Clientes.Dao.csproj
+```
+
+
+
+### Agregar Policy
+
+```
+arn:aws:rds-db:<<region>>:<<account-id>>:dbuser:<<dbi-resource-id>>/<<database-user-name>>
+```
+
+```
+aws rds describe-db-instances \
+     --query "DBInstances[*].[DBInstanceIdentifier,DbiResourceId]"
+```
+
+```
+arn:aws:rds-db:us-east-1:081255659930:dbuser:db-MLLJQKLLUGFUYWB6AJTZ7U6RPE/admin
+```
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "rds-db:connect"
+            ],
+            "Resource": [
+                "arn:aws:rds-db:us-east-1:081255659930:dbuser:db-MLLJQKLLUGFUYWB6AJTZ7U6RPE/admin"
+            ]
+        }
+    ]
+}
 ```

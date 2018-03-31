@@ -18,7 +18,8 @@ namespace Clientes.Dao
 
         void ClienteRespository.connect()
         {
-            String connectionString = "Server=dbinstance.ciwrnxkiyug1.us-east-1.rds.amazonaws.com;Database=dbname;Uid=admin;Pwd=Password;";
+            //string connectionString = "Server=dbinstance.ciwrnxkiyug1.us-east-1.rds.amazonaws.com;Database=dbname;Uid=admin;Pwd=Password;";
+            string connectionString = "Server=dbinstance.ciwrnxkiyug1.us-east-1.rds.amazonaws.com;Database=dbname;";
 
             var connection = new MySqlConnection(connectionString); 
 
