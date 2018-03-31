@@ -1,0 +1,8 @@
+/Proyectos/Talleres/Microservicios_NetCore/Clientes.Services/bin/Release/netstandard2.0/Clientes.Services.deps.json
+/Proyectos/Talleres/Microservicios_NetCore/Clientes.Services/bin/Release/netstandard2.0/Clientes.Services.dll
+/Proyectos/Talleres/Microservicios_NetCore/Clientes.Services/bin/Release/netstandard2.0/Clientes.Services.pdb
+/Proyectos/Talleres/Microservicios_NetCore/Clientes.Services/obj/Release/netstandard2.0/Clientes.Services.csproj.CoreCompileInputs.cache
+/Proyectos/Talleres/Microservicios_NetCore/Clientes.Services/obj/Release/netstandard2.0/Clientes.Services.AssemblyInfoInputs.cache
+/Proyectos/Talleres/Microservicios_NetCore/Clientes.Services/obj/Release/netstandard2.0/Clientes.Services.AssemblyInfo.cs
+/Proyectos/Talleres/Microservicios_NetCore/Clientes.Services/obj/Release/netstandard2.0/Clientes.Services.dll
+/Proyectos/Talleres/Microservicios_NetCore/Clientes.Services/obj/Release/netstandard2.0/Clientes.Services.pdb

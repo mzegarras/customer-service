@@ -1,0 +1,10 @@
+/Proyectos/Talleres/Microservicios_NetCore/Clientes.Microservice/bin/Release/netcoreapp2.0/Clientes.Microservice.deps.json
+/Proyectos/Talleres/Microservicios_NetCore/Clientes.Microservice/bin/Release/netcoreapp2.0/Clientes.Microservice.runtimeconfig.json
+/Proyectos/Talleres/Microservicios_NetCore/Clientes.Microservice/bin/Release/netcoreapp2.0/Clientes.Microservice.runtimeconfig.dev.json
+/Proyectos/Talleres/Microservicios_NetCore/Clientes.Microservice/bin/Release/netcoreapp2.0/Clientes.Microservice.dll
+/Proyectos/Talleres/Microservicios_NetCore/Clientes.Microservice/bin/Release/netcoreapp2.0/Clientes.Microservice.pdb
+/Proyectos/Talleres/Microservicios_NetCore/Clientes.Microservice/obj/Release/netcoreapp2.0/Clientes.Microservice.csproj.CoreCompileInputs.cache
+/Proyectos/Talleres/Microservicios_NetCore/Clientes.Microservice/obj/Release/netcoreapp2.0/Clientes.Microservice.AssemblyInfoInputs.cache
+/Proyectos/Talleres/Microservicios_NetCore/Clientes.Microservice/obj/Release/netcoreapp2.0/Clientes.Microservice.AssemblyInfo.cs
+/Proyectos/Talleres/Microservicios_NetCore/Clientes.Microservice/obj/Release/netcoreapp2.0/Clientes.Microservice.dll
+/Proyectos/Talleres/Microservicios_NetCore/Clientes.Microservice/obj/Release/netcoreapp2.0/Clientes.Microservice.pdb
