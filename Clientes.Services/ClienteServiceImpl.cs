@@ -39,6 +39,13 @@ namespace Clientes.Services
 
             PublishResponse publishResponse = snsClient.PublishAsync(request).GetAwaiter().GetResult();
 
+        
+
+
+            log.LogError(publishResponse.MessageId);
+            log.LogError(publishResponse.ResponseMetadata.ToString());
+            log.LogError(publishResponse.ToString());
+
             log.LogDebug(publishResponse.MessageId);
             log.LogDebug(publishResponse.ResponseMetadata.ToString());
             log.LogDebug(publishResponse.ToString());
