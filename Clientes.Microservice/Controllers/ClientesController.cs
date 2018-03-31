@@ -5,17 +5,20 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Clientes.Models;
 using Clientes.Services;
+using Microsoft.Extensions.Logging;
 
 namespace Clientes.Microservice.Controllers
 {
     [Route("api/[controller]")]
     public class ClientesController : Controller
     {
-        //private static readonly log4net.ILog log = log4net.LogManager.GetLogger(typeof(ClientesController));
+
+        private readonly ILogger<ClientesController> log;
         private readonly ClienteService clienteService;
-        
-        public ClientesController(ClienteService clienteService){
+
+        public ClientesController(ClienteService clienteService,ILogger<ClientesController> log){
             this.clienteService=clienteService;
+            this.log=log;
         }
 
         // GET api/values
@@ -40,10 +43,13 @@ namespace Clientes.Microservice.Controllers
             clienteTO2.Edad=clienteService.sumar(1,9);
             clientes.Add(clienteTO2);
 
-            /*log.Debug("1");
-            log.Error("2");
-            log.Fatal("3");
-            log.Warn("4");*/
+
+            log.LogInformation("Hello");
+            log.LogDebug("Hello");
+            log.LogError("Hello");
+            log.LogTrace("Hello");
+            log.LogWarning("Hello");
+
             return clientes;
         }
 
@@ -72,8 +78,8 @@ namespace Clientes.Microservice.Controllers
                 return BadRequest();
             }
 
-            Console.Write(cliente.Codigo);
-            Console.Write(cliente.Nombres);
+            log.LogDebug(cliente.Codigo);
+            log.LogDebug(cliente.Nombres);
 
             clienteService.save(null);
 

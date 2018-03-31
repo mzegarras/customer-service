@@ -2,6 +2,7 @@
 using Amazon.SimpleNotificationService;
 using Amazon.SimpleNotificationService.Model;
 using Clientes.Model;
+using Microsoft.Extensions.Logging;
 
 namespace Clientes.Services
 {
@@ -10,6 +11,12 @@ namespace Clientes.Services
     {
 
         //private static readonly log4net.ILog log = log4net.LogManager.GetLogger(typeof(ClienteServiceImpl));
+        private readonly ILogger<ClienteServiceImpl> log;
+
+
+        public ClienteServiceImpl(ILogger<ClienteServiceImpl> log){
+            this.log=log;
+        }
 
         public void save(Customer customer)
         {
@@ -31,6 +38,10 @@ namespace Clientes.Services
             };
 
             PublishResponse publishResponse = snsClient.PublishAsync(request).GetAwaiter().GetResult();
+
+            log.LogDebug(publishResponse.MessageId);
+            log.LogDebug(publishResponse.ResponseMetadata.ToString());
+            log.LogDebug(publishResponse.ToString());
         }
     } 
 }

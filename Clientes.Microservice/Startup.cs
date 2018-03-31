@@ -25,7 +25,16 @@ namespace Clientes.Microservice
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<ClienteService, ClienteServiceImpl>();
+            //services.AddLogging(configure => configure.AddConsole());
             //services.AddSingleton<ClienteService,ClienteServiceImpl>();
+
+
+            var serviceProvider = new ServiceCollection()
+                      .AddLogging() //<-- You were missing this
+                      .BuildServiceProvider();
+
+            
+
             services.AddMvc();
         }
 

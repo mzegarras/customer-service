@@ -51,17 +51,17 @@ dotnet add ./Clientes.Microservice/Clientes.Microservice.csproj reference ./Clie
 
 ### Generar imagen
 ```
-docker build -t clientesa:6.0.0 .
+docker build -t clientesa:9.0.0 .
 ```
 
 ### Tag imagen
 ```
-docker tag clientesa:6.0.0 mzegarra/clientesa:6.0.0
+docker tag clientesa:9.0.0 mzegarra/clientesa:9.0.0
 ```
 
 ### Publicar imagen
 ```
-docker push mzegarra/clientesa:6.0.0
+docker push mzegarra/clientesa:9.0.0
 ```
 
 ### Invcar método save
@@ -74,4 +74,15 @@ https://www.app-metrics.io/samples/health-code/
 
 ```
 dotnet add package App.Metrics.AspNetCore.Health.Endpoints --version 2.0.0
+```
+
+
+### Agregar Logging
+```
+  dotnet add package Microsoft.Extensions.DependencyInjection
+  dotnet add package Microsoft.Extensions.Logging
+```  
+
+```
+curl -v -H "Content-Type: application/json" -X GET http://realelb-1395575868.us-east-1.elb.amazonaws.com/api/clientes
 ```
