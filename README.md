@@ -133,3 +133,13 @@ arn:aws:rds-db:us-east-1:081255659930:dbuser:db-MLLJQKLLUGFUYWB6AJTZ7U6RPE/admin
     ]
 }
 ```
+
+
+### Manejo de contenedores
+```
+aws ecs list-clusters
+aws ecs create-cluster --cluster-name fargate-cluster
+aws ecs list-task-definitions
+aws ecs list-services --cluster realplaza
+aws ecs describe-services --cluster realplaza --services fargate-service
+```
