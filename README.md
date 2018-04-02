@@ -16,7 +16,6 @@ dotnet new classlib -o MyWebApp.DataStore
 
 ### Agregar dependencias
 ```
-dotnet add package log4net --version 2.0.8
 dotnet add package AWSSDK.SimpleNotificationService --version 3.3.0.27
 
 ```
@@ -51,17 +50,17 @@ dotnet add ./Clientes.Microservice/Clientes.Microservice.csproj reference ./Clie
 
 ### Generar imagen
 ```
-docker build -t clientesa:14.0.0 .
+docker build -t clientesa:18.0.0 . --no-cache
 ```
 
 ### Tag imagen
 ```
-docker tag clientesa:14.0.0 mzegarra/clientesa:14.0.0
+docker tag clientesa:18.0.0 mzegarra/clientesa:18.0.0
 ```
 
 ### Publicar imagen
 ```
-docker push mzegarra/clientesa:14.0.0
+docker push mzegarra/clientesa:18.0.0
 ```
 
 ### Invcar método save
@@ -143,3 +142,36 @@ aws ecs list-task-definitions
 aws ecs list-services --cluster realplaza
 aws ecs describe-services --cluster realplaza --services fargate-service
 ```
+
+```
+create-cluster                           | create-service                          
+delete-attributes                        | delete-cluster                          
+delete-service                           | deregister-container-instance           
+deregister-task-definition               | describe-clusters                       
+describe-container-instances             | describe-services                       
+describe-task-definition                 | describe-tasks                          
+discover-poll-endpoint                   | list-attributes                         
+list-clusters                            | list-container-instances                
+list-services                            | list-task-definition-families           
+list-task-definitions (*)                | list-tasks                              
+put-attributes                           | register-container-instance             
+register-task-definition                 | run-task                                
+start-task                               | stop-task                               
+submit-container-state-change            | submit-task-state-change                
+update-container-agent                   | update-container-instances-state        
+update-service                           | wait                                    
+help                                  
+```
+
+
+### Agregar proyecto del tipo library proxy rest
+
+```
+dotnet new classlib -o Clientes.RestProxy
+dotnet add package Microsoft.Extensions.Logging
+
+```
+
+### Agregar referencia
+
+dotnet add ./Clientes.Services/Clientes.Services.csproj reference ./Clientes.RestProxy/Clientes.RestProxy.csproj

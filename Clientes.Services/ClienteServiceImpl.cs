@@ -24,12 +24,29 @@ namespace Clientes.Services
             this.clienteRespository = clienteRespository;
         }
 
+        public string list()
+        {
+            
+            /*log.LogTrace(message);
+            log.LogDebug(message);
+            log.LogInformation(message);
+            log.LogWarning(message);
+            log.LogCritical(message);
+
+            return message;*/
+
+            return string.Empty;
+
+        }
+
         public void save(Customer customer)
         {
             
             this.clienteRespository.connect();
             
-            notificationService.sendMessage();
+            this.notificationService.sendMessage();
+
+           
         }
 
         int ClienteService.sumar(int n1, int n2)

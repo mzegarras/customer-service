@@ -27,6 +27,7 @@ namespace Clientes.Microservice.Controllers
         [HttpGet]
         public IEnumerable<ClienteTO> Get()
         {
+            
             List<ClienteTO> clientes = new List<ClienteTO>();
 
             ClienteTO clienteTO1 = new ClienteTO();
@@ -85,6 +86,8 @@ namespace Clientes.Microservice.Controllers
             log.LogDebug(cliente.Nombres);
 
             clienteService.save(null);
+
+            clienteService.list();
 
             return CreatedAtRoute("GetCliente", new { id = cliente.Codigo }, cliente);
 
